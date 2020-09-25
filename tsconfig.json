@@ -11,6 +11,7 @@
         "sourceMap": true,
         "skipLibCheck" : true,
         "outDir": "./dist",
+        "strict": true,
         "typeRoots": [
           "node_modules/@types",
           "typings.d.ts"

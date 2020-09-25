@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import {say} from './index'
+import {marks, say} from './index'
 
 describe('FizzBuzz test', () => {
 
@@ -35,5 +35,11 @@ describe('FizzBuzz test', () => {
         expect(say(1)).to.be.eq("1");
         expect(say(41)).to.be.eq("41");
         expect(say(73)).to.be.eq("73");
+    });
+
+    it(`At the end, contigous should include 5/6 and 9/10 `, () => {
+
+        expect(marks.indexes).to.include('5/6');
+        expect(marks.indexes).to.include('9/10');
     });
 });
