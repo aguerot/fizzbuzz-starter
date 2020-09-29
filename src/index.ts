@@ -9,23 +9,17 @@
 
 export const say = (input: number) => {
 
-  if (input == 0) {
+  if (input === 0)
     return '0';
-  }
-
-  if (input % 3 == 0 && input % 5 == 0) {
+  else if (input % 15 === 0)
     return 'Fizzbuzz';
-  }
-
-  if (input % 3 == 0) {
+  else if (input % 3 === 0)
     return 'Fizz';
-  }
-
-  if (input % 5 == 0) {
+  else if (input % 5 === 0)
     return 'Buzz';
-  }
+  else
+    return input.toString();
 
-  return input.toString();
 }
 
 const results = Array.from({ length: 101 })
