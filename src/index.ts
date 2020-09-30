@@ -1,39 +1,22 @@
+import { Rule, zero, fizz, buzz, fizzbuzz, other } from './rules';
+
 /* say
-  Return: (string)
-    '0' if the input is 0
-    'Fizz' if the input is a multiple of 3
-    'Buzz' if the input is a multiple of 5
-    'Fizzbuzz' if the input is a multiple of 3 and 5
-    else the input as a string
+  Check for in the list of rule and return the result of the first rule that applies on the param input
 */
 
 export const say = (input: number) => {
 
-  if (input === 0) return '0';
+  const rules: Rule[] = [
+    zero,
+    fizzbuzz,
+    fizz,
+    buzz,
+    other
+  ];
 
-  let text: string = '';
+  const firstRule = rules.find((rule) => rule.condition(input));
 
-  if (input % 3 === 0)
-    text += 'fizz';
-
-  if (input % 5 === 0)
-    text += 'buzz';
-
-  /*if (input % 7 === 0)
-    text += 'bang';*/
-
-  if (text === '')
-    return input.toString();
-  else 
-    return capitalizeFirstLetter(text);
-}
-
-/* capitalizeFirstLetter
-  Return: (string)
-    The text parameter with the first letter in upper case
-*/
-const capitalizeFirstLetter = (text: string) => {
-  return text.charAt(0).toUpperCase() + text.slice(1);
+  return firstRule?.process(input);
 }
 
 const results = Array.from({ length: 101 })
