@@ -1,6 +1,16 @@
+import { GetSentencesDto } from './fizzbuzz/usecase/getSentences/getSentences.dto';
+import { DisplayInlineSentence } from './adapters/secondary/displayInlineSentence';
+import { DisplayNewlineSentence } from './adapters/secondary/displayNewlineSentence';
 
-const say = (input: number) => input.toString(); 
-const results = Array.from({ length: 101 })
-                     .map((_, index) => `${index} => ${say(index)}`);
+const provider: GetSentencesDto = {
+  count: 31,
+  from: 1
+};
 
-console.log(results.join('\n'));
+const inline = new DisplayInlineSentence(provider.from, provider.count);
+console.log(inline.display());
+
+console.log("--------------------------------");
+
+const newLine = new DisplayNewlineSentence(provider.from, provider.count);
+console.log(newLine.display());
