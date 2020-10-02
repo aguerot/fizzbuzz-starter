@@ -22,7 +22,7 @@ describe('FizzBuzz test', () => {
   it('should return "Buzz" if number is 10', () => {
     expect(new FizzBuzz(10).say()).to.equal('Buzz');
   });
-  it('should return "FizzBuzz" if number is 15', () => {
-    expect(new FizzBuzz(15).say()).to.equal('FizzBuzz');
+  it('should return "Fizzbuzz" if number is 15', () => {
+    expect(new FizzBuzz(15).say()).to.equal('Fizzbuzz');
   });
 });

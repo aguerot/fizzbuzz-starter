@@ -15,10 +15,6 @@ export class GetSentencesUsecase {
   }
 
   private toArray(from: number, count: number): Array<number> {
-    const array = [];
-    for (let i = from; i < from + count; i++) {
-      array.push(i);
-    }
-    return array;
+    return Array.from({ length: count}).map((_, index) => from + index);
   }
 }

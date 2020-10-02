@@ -3,7 +3,7 @@ import { GetSentencesUsecase } from '../usecase/getSentences/getSentences.usecas
 export abstract class DisplaySentences {
   useCase: GetSentencesUsecase = new GetSentencesUsecase();
 
-  display() {
+  abstract display(from: number,
+                   count: number)
 
-  }
 }

@@ -9,7 +9,7 @@ export class FizzBuzz {
     }
 
     if (FizzBuzz.isModulo3x5(this.value)) {
-      return 'FizzBuzz';
+      return 'Fizzbuzz';
     }
     if (FizzBuzz.isModulo3(this.value)) {
       return 'Fizz';

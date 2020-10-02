@@ -7,10 +7,10 @@ const provider: GetSentencesDto = {
   from: 1
 };
 
-const inline = new DisplayInlineSentence(provider.from, provider.count);
-console.log(inline.display());
+const inline = new DisplayInlineSentence();
+console.log(inline.display(provider.from, provider.count));
 
-console.log("--------------------------------");
+console.log('--------------------------------');
 
-const newLine = new DisplayNewlineSentence(provider.from, provider.count);
-console.log(newLine.display());
+const newLine = new DisplayNewlineSentence();
+console.log(newLine.display(provider.from, provider.count));
